@@ -44,7 +44,7 @@ $(document).ready(function(){
 		rel: 'stylesheet',
 		href: 'assets/css/light.css'
 	});
-	if (localStorage.theme == "dark") {
+	if (localStorage.theme == "light") {
 		// Handle menu
 		$("link[href='assets/css/light.css']").remove();
 		$('<link>').appendTo('head').attr({
@@ -56,7 +56,7 @@ $(document).ready(function(){
 	}
 	// Done because light is the one by default
 	if(localStorage.lan == "es") {
-		$('#lan img').attr("src","/assets/img/es_flag.webp");
+		$('#lan img').attr("src","/assets/img/en_flag.webp");
 		$('#lan').addClass("en");
 	}
 	updateLanguage();
