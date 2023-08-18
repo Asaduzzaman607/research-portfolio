@@ -26,16 +26,16 @@ $(document).ready(function(){
 	// First time, check the theme
 	if(localStorage.getItem("theme") === null){
 		localStorage.theme = "light";
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-			localStorage.theme = "dark";
+		if (window.matchMedia('(prefers-color-scheme: light)').matches)
+			localStorage.theme = "light";
 	}
 	
 	// First time, check the locale
 	let userLang = navigator.language || navigator.userLanguage;
 	if(localStorage.getItem("lan") === null){
 		localStorage.lan = "en";
-		if (userLang.split('-')[0] == "es")
-			localStorage.lan = "es";
+		if (userLang.split('-')[0] == "en")
+			localStorage.lan = "en";
 	}
 
 	// Maybe first time or not, so load the localStorage value
@@ -50,14 +50,14 @@ $(document).ready(function(){
 		$('<link>').appendTo('head').attr({
 			type: 'text/css', 
 			rel: 'stylesheet',
-			href: 'assets/css/dark.css'
+			href: 'assets/css/light.css'
 		});
 		$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
 	}
 	// Done because light is the one by default
 	if(localStorage.lan == "es") {
 		$('#lan img').attr("src","/assets/img/es_flag.webp");
-		$('#lan').addClass("es");
+		$('#lan').addClass("en");
 	}
 	updateLanguage();
 
